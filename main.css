@@ -7,10 +7,14 @@
     --max-content-width: 1000px;
     --outer-margin-size: 30px;
     --page-min-margin: 64px;
-    --side-inner-padding-card: 30px;
-    --vertical-inner-padding-card: 20px;
+    --vertical-inner-padding-card: 25px;
     --card-border-radius: 5px;
 
+    --paragraph-font-size: 18pt;
+    --paragraph-line-spacing: 24pt;
+    --paragraph-letter-spacing: 0.2px;
+
+    --lightblue: rgb(78, 128, 199);
     --blue: rgb(42, 67, 102);
     --darkblue: rgb(19, 29, 43);
 }
@@ -25,12 +29,14 @@ ul {
 }
 
 .white-background {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.8);
     background: white;
 }
 
 .content-wrapper {
     width: 100%;
-    padding: var(--vertical-inner-padding-card) 0;
+    padding: var(--vertical-inner-padding-card) 0 calc(var(--vertical-inner-padding-card) * 1.5);
+    border-bottom: 1px solid rgba(42, 67, 102, 0.1);
 }
 
 .content-container {
@@ -45,6 +51,7 @@ h3 {
     color: var(--blue);
     text-align: center;
     font-size: 42pt;
+    margin-bottom: 20px;
 }
 
 .image-container img {
@@ -59,6 +66,7 @@ h3 {
     width: var(--side-length);
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 1px 5px 10px 0 rgba(0,0,0,0.1);
 }
 
 .main-content {
@@ -81,9 +89,9 @@ h3 {
 .main-content p {
     text-align: justify;
     text-align-last: center;
-    font-size: 18pt;
-    letter-spacing: 0.2px;
-    line-height: 24pt;
+    font-size: var(--paragraph-font-size);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-spacing);
     font-weight: 500;
 }
 
@@ -92,6 +100,13 @@ h1 {
     font-size: 52pt;
     letter-spacing: -1px;
     margin: 10px 0 15px;
+}
+
+h4 {
+    font-size: 22pt;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 #links-container ul {
@@ -108,8 +123,8 @@ a {
     text-decoration: none;
 }
 
-a span {
-    border-radius: 5px;
+#links-container a span {
+    border-radius: 2px;
     overflow: hidden;
     padding: 0 10px;
     color: white;
@@ -119,7 +134,96 @@ a span {
     transition: box-shadow 0.4s, color 0.5s;
 }
 
-a:hover span {
+#links-container a:hover span {
     box-shadow: inset 0 -50px 0 0 white;
     color: var(--blue);
+}
+
+p a span {
+    font-size: var(--paragraph-font-size);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-spacing);
+    color: var(--lightblue);
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+p a:hover span {
+    color: var(--blue);
+}
+
+a.icon-button-lg {
+    position: relative;
+    --button-size: 180px;
+    display: block;
+    height: var(--button-size);
+    width: var(--button-size);
+    background: var(--darkblue);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 0 var(--lightblue);
+    transition: box-shadow 0.2s;
+}
+
+.icon-button-lg img {
+    width: calc(100% - 60px);
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    transform: translate(-50%, 0);
+}
+
+.icon-button-lg span {
+    position: absolute;
+    bottom: 10px;
+    font-size: 16pt;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.icon-button-lg:hover {
+    box-shadow: inset 0 calc(-1 * var(--button-size)) 0 0 var(--lightblue);
+}
+
+#projects-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+#projects-columns #project-col-left {
+    grid-column: 1;
+}
+
+#projects-columns #project-col-right {
+    grid-column: 2;
+}
+
+#coding-container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: auto;
+}
+
+#coding-container h3 {
+    grid-column: 1 /span 2;
+}
+#coding-container #left-wrapper {
+    grid-column: 1;
+    grid-row: title-buffer / span 2;
+}
+
+#coding-container #right-wrapper {
+    grid-column: 2;
+    grid-row: content-start;
 }
