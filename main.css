@@ -77,9 +77,9 @@ h3 {
 .main-content p {
     text-align: justify;
     text-align-last: center;
-    font-size: 22pt;
-    letter-spacing: 0.6px;
-    line-height: 34pt;
+    font-size: 18pt;
+    letter-spacing: 0.2px;
+    line-height: 24pt;
     font-weight: 500;
 }
 
