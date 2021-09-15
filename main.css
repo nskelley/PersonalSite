@@ -1,3 +1,67 @@
 * {
     font-family: freight-sans-pro, sans-serif;
+    font-size: 18pt;
+    padding: 0;
+    margin: 0;
+
+    --max-content-width: 1000px;
+    --outer-margin-size: 30px;
+    --page-min-margin: 30px;
+    --side-inner-padding-card: 30px;
+    --vertical-inner-padding-card: 20px;
+    --card-border-radius: 5px;
+}
+
+body {
+    padding: 0;
+    background: rgb(17, 19, 27);
+}
+
+h1 {
+    font-size: 56pt;
+    letter-spacing: -1px;
+    font-weight: 400;
+    color:rgb(17, 19, 27);
+}
+
+.card {
+    width: calc(100% - (var(--page-min-margin) * 2));
+    max-width: 1100px;
+    position: relative;
+    left: 50%;
+    top: var(--page-min-margin);
+    transform: translate(-50%, 0);
+    background: white;
+    border-radius: var(--card-border-radius);
+}
+
+.container {
+    padding: var(--vertical-inner-padding-card) var(--side-inner-padding-card);
+}
+
+ul {
+    list-style: none;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#main-card .container {
+    display: grid;
+    --column-gap: 30px;
+    --image-prop: calc((100% - 20px) / 4);
+    grid-template-columns: [image-start] var(--image-prop) [image-end] var(--column-gap) [content-start] auto;
+}
+
+#main-card #header-image-container {
+    grid-column: image-start / image-end;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#main-card #bio-container {
+    grid-column: content-start / span 1;
 }
