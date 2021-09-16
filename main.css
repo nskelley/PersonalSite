@@ -255,3 +255,43 @@ a.icon-button-lg {
     text-decoration: underline;
     letter-spacing: 0.4px;
 }
+
+.contact-links {
+    display: block;
+    position: relative;
+}
+
+.contact-links li {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 20px;
+}
+
+.contact-links li::before {
+    content: '';
+    display: block;
+    --block-size: 32px;
+    height: var(--block-size);
+    width: var(--block-size);
+    background: blue;
+    position: absolute;
+    top: 40%;
+    left: calc(var(--block-size) * -1 - 15px);
+    transform: translate(0,-25%);
+}
+
+.contact-links li#github::before {
+    background: url("images/GitHub-Mark/Vector/github-small.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.contact-links li#email::before {
+    background: url("images/email.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
