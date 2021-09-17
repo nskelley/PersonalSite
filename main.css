@@ -267,6 +267,7 @@ a.icon-button-lg {
 }
 
 .contact-links li {
+    font-size: var(--paragraph-font-size);
     display: inline-block;
     position: relative;
     left: 50%;
@@ -442,10 +443,6 @@ a.icon-button-lg {
 
     #coding-container h3, #coding-container #right-wrapper {
         grid-column: 1;
-    }
-
-    .contact-links span {
-        font-size: 16pt;
     }
 
     .contact-links li::before {
