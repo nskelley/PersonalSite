@@ -421,6 +421,10 @@ a.icon-button-lg {
         flex-wrap: wrap;
     }
 
+    #links-container li a {
+        display: block;
+    }
+
     #links-container li {
         display: block;
         width: calc(100% + var(--page-min-margin) * 2);
