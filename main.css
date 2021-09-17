@@ -400,7 +400,7 @@ a.icon-button-lg {
 
     .image-container#main-image {
         --side-length: 130px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
     }
 
     .main-content {
@@ -448,5 +448,10 @@ a.icon-button-lg {
     .contact-links li::before {
         --block-size: 24px;
         left: calc(var(--block-size) * -1 - 10px);
+    }
+
+    #links-container a:hover span {
+        box-shadow: none;
+        color: white;
     }
 }
