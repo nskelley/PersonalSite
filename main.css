@@ -59,11 +59,41 @@ p {
     transform: translate(-50%, 0);
 }
 
+.italic {
+    font-style: italic;
+}
+
 h3 {
     color: var(--blue);
     text-align: center;
     font-size: 42pt;
     margin-bottom: 20px;
+}
+
+.publication:not(:first-of-type) {
+    margin-top: 30px;
+}
+
+.paper-actions {
+    display: flex;
+}
+
+.paper-actions a {
+    color: white;
+    font-weight: 500;
+    background: var(--lightblue);
+    border: 2px solid var(--lightblue);
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 8px;
+
+    transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1), color 0.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.paper-actions a:hover {
+    background: white;
+    color: var(--lightblue);
+    border: 2px solid var(--lightblue);
 }
 
 .image-container img {
