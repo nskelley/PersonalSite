@@ -1,5 +1,6 @@
 **/.DS_Store
 */*.DS*
+**.DS*
 **/*.tex
 **.ai
 pubs_wait.json
