@@ -305,12 +305,14 @@ ul:not(.navbar,.mobile-navbar) {
     width: 100%;
     top: 0;
     left: 0;
+    pointer-events: none;
     background: rgb(234, 230, 228, 0);
     transition: background-color 0.2s;
     z-index: 2;
 }
 
 #mobile-navbar.activated {
+    pointer-events: all;
     background: var(--background-cream);
 }
 
@@ -346,6 +348,7 @@ ul:not(.navbar,.mobile-navbar) {
 
 #navbar-toggle {
     display: block;
+    pointer-events: all;
     width: var(--mobile-navbar-width);
     height: var(--mobile-navbar-width);
     position: relative;
