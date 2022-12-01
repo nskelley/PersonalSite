@@ -4,5 +4,6 @@
 **/*.tex
 **.ai
 **.zip
+**.synctex.gz
 archive/
 pubs_wait.json
