@@ -427,6 +427,51 @@ ul:not(.navbar,.mobile-navbar) {
     transform: rotate(-45deg);
 }
 
+.bibliography-item:not(:last-of-type) {
+    margin-bottom: 12px;
+}
+
+.bibliography-item p {
+    padding-bottom: 0;
+}
+
+.bibliography-item ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.bibliography-item li {
+    display: inline-block;
+}
+
+.bibliography-item a {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.bibliography-item a span {
+    font-size: 14pt;
+    padding: 0 10px;
+    color: var(--content-cream);
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 calc(-2 * 12px) 0 0 var(--link-blue);
+    transition: border-radius 0.3s, box-shadow 0.3s, color 0.1s;
+}
+
+.bibliography-item a:hover span {
+    border-radius: 0px;
+    color: var(--link-hover-blue);
+    box-shadow: inset 0 -3px 0 0 var(--link-hover-blue);
+}
+
+.bibtex-cite-val {
+    display: none;
+}
+
 @media screen and (max-width: 1464px) {
     * {
         --outer-content-gap: 64px;
