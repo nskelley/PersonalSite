@@ -43,9 +43,11 @@ $.ajax({
                     html += ("<li><a target=\"_blank\" href=\"" + value[7] + "\"><span>PDF</span></a></li>\n");
                 }
                 // Add citation/BibTeX
+                /*
                 if (value[8] != "") {
                     html += ("<li class=\"bibtex-cite-btn\"><a><span>Cite<div class=\"bibtex-cite-val\">" + value[8] + "</div></span></a></li>\n");
                 }
+                */
 
                 html += "</ul>\n";
             }
