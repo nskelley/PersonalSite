@@ -21,7 +21,7 @@ $.ajax({
         8 = bibtex
         */
 
-        // Sort by (1) year, (2) journal ["In progress" < "Working paper" < anything else (a journal)]
+        // Sort by (1) journal ["In progress" < "Working paper" < "Submitted" < anything else (a journal)], (2) year
         pubs.sort(sortPublications);
         pubs.splice(0, 1);
 
@@ -74,7 +74,7 @@ $.ajax({
     }
 })
 
-var pub_status = ["Working paper", "In progress"]
+var pub_status = ["Submitted", "Working paper", "In progress"]
 
 function sortPublications(a, b) {
     var a_status = pub_status.indexOf(a[3])
@@ -83,11 +83,12 @@ function sortPublications(a, b) {
     if (a[1] === b[1] & a_status == b_status) {
         // Case: year and publication status are the same
         return 0;
-    } else if (a[1] === b[1] & a_status != b_status) {
+    } else if (a_status != b_status) {
+        // Case publication status is difference (sort in order of publication type)
         // Case: year is the same but publication status is different
         return (a_status < b_status) ? -1 : 1;
-    } else if (a[1] != b[1]) {
-        // Case: year is different (sort in descending order of year)
+    } else if (a[1] != b[1] & a_status == b_status) {
+        // Case: year is different but publication status is the same
         return (a[1] < b[1]) ? 1 : -1;
     }
 }
